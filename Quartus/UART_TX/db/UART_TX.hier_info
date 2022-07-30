@@ -1,0 +1,56 @@
+|UART_TX
+clk => clk.IN1
+rstn => rstn.IN1
+send => next_state.DATAA
+send_data[0] => shift_reg.DATAB
+send_data[1] => shift_reg.DATAB
+send_data[2] => shift_reg.DATAB
+send_data[3] => shift_reg.DATAB
+send_data[4] => shift_reg.DATAB
+send_data[5] => shift_reg.DATAB
+send_data[6] => shift_reg.DATAB
+send_data[7] => shift_reg.DATAB
+serial_dat_out <= serial_dat_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_TX|UART_Counter:Counter
+clk => bit_count[0].CLK
+clk => bit_count[1].CLK
+clk => bit_count[2].CLK
+clk => bit_count[3].CLK
+clk => baud_count[0].CLK
+clk => baud_count[1].CLK
+clk => baud_count[2].CLK
+clk => baud_count[3].CLK
+clk => baud_count[4].CLK
+clk => baud_count[5].CLK
+clk => baud_count[6].CLK
+clk => baud_count[7].CLK
+clk => baud_count[8].CLK
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+half_bit_flag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+full_bit_flag <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+packet_done <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+

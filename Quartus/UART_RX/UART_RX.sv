@@ -1,0 +1,75 @@
+module UART_RX (clk, rstn, serial_dat_in, data);
+	
+	input logic clk, rstn, serial_dat_in;
+	output logic [7:0] data;
+	
+	typedef enum {IDLE, RX, LOAD} States;
+	
+	logic [1:0] state, next_state;
+	logic [9:0] shift_reg;
+	logic get_bit;
+	logic packet_done;
+	logic idling;
+	logic receiving;
+	
+	assign idling = ~receiving;
+	
+	
+	UART_Counter Counter (	.clk(clk), 
+									.rstn(rstn), 
+									.cnt_reset(idling), 
+									.half_bit_flag(get_bit), 
+									.full_bit_flag(), 
+									.packet_done(packet_done)
+									);
+	
+	
+	always_ff @(posedge clk) begin
+		if (!rstn) state <= IDLE;
+		else state <= next_state;
+	end // end always_ff @(posedge clk)
+	
+	
+	always_comb begin
+		case (state)
+			IDLE:
+				begin
+					if (serial_dat_in == 1'b0) next_state = RX;
+					else next_state = IDLE;
+				end // end case IDLE
+			
+			RX:
+				begin
+					if (packet_done) next_state = LOAD;
+					else next_state = RX;
+				end // end case RX
+				
+			LOAD:
+				begin
+					next_state = IDLE;
+				end // end case LOAD
+			
+			default: next_state = IDLE;
+			
+		endcase
+	end // end always_comb
+	
+	
+	always_comb begin
+		if (state == RX) receiving = 1'b1;
+		else receiving = 1'b0;
+	end // end always_comb
+	
+	
+	always_ff @(posedge clk) begin
+		if (!rstn) begin
+			shift_reg <= 10'd0;
+			data <= 8'd0;
+		end // end if (!rstn)
+		else begin
+			if (state == RX && get_bit) shift_reg <= {serial_dat_in, shift_reg[9:1]};
+			if (state == LOAD) data <= shift_reg[8:1];
+		end // end else (!rstn)
+	end // end always_ff
+	
+endmodule 

@@ -1,0 +1,22 @@
+{C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_RX
+
+Top level modules:
+	UART_RX
+
+} {} {}} {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_RX_tb
+
+Top level modules:
+	UART_RX_tb
+
+} {} {}} {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_Counter.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_Counter.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_Counter
+
+Top level modules:
+	UART_Counter
+
+} {} {}}

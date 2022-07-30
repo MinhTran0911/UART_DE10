@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "serial_dat_out",
+					"strict" : false
+				},
+				{
+					"name" : "rstn",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "send",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "send_data[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

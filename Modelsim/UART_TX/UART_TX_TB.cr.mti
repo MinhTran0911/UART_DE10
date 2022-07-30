@@ -1,0 +1,22 @@
+{C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_TX
+
+Top level modules:
+	UART_TX
+
+} {} {}} {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_Counter.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_Counter.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_Counter
+
+Top level modules:
+	UART_Counter
+
+} {} {}} {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_TX_tb
+
+Top level modules:
+	UART_TX_tb
+
+} {} {}}

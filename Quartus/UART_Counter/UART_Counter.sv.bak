@@ -1,0 +1,16 @@
+module UART_Counter (clk, rstn, cnt_reset, half_bit_flag, full_bit_flag, rx_done);
+	
+	localparam BAUD_COUNT_WIDTH = 4'd9;
+	localparam BAUD_COUNT_TOP = 9'd434;
+	
+	localparam BIT_COUNT_WIDTH = 3'd4;
+	localparam BIT_COUNT_TOP = 4'd10;
+	
+	input logic clk, rstn, cnt_reset;
+	
+	output logic half_bit_flag, full_bit_flag, rx_done;
+	
+	logic [(BAUD_COUNT_WIDTH-4'd1):0] baud_count
+	always_ff @(posedge clk) begin
+	
+	end // end always_ff @(posedge clk)

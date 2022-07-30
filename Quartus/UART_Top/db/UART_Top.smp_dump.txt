@@ -1,0 +1,6 @@
+
+State Machine - |UART_Top|UART_RX:UART_Receiver|state
+Name state.IDLE state.LOAD state.RX 
+state.IDLE 0 0 0 
+state.RX 1 0 1 
+state.LOAD 1 1 0 

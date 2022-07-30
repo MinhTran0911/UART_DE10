@@ -1,0 +1,34 @@
+# Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# OpenFile {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX_TB.mpf}
+# Loading project UART_TX_TB
+# Compile of UART_TX_tb.sv was successful.
+# Compile of UART_Counter.sv was successful.
+# Compile of UART_TX.sv failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of UART_TX_tb.sv was successful.
+# Compile of UART_Counter.sv was successful.
+# Compile of UART_TX.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.UART_TX_tb
+# vsim -gui work.UART_TX_tb 
+# Start time: 20:11:17 on Jul 20,2022
+# Loading sv_std.std
+# Loading work.UART_TX_tb
+# Loading work.UART_TX
+# Loading work.UART_Counter
+add wave -position insertpoint  \
+sim:/UART_TX_tb/clk \
+sim:/UART_TX_tb/rstn \
+sim:/UART_TX_tb/send \
+sim:/UART_TX_tb/serial_dat_out \
+sim:/UART_TX_tb/sending \
+sim:/UART_TX_tb/send_bit \
+sim:/UART_TX_tb/packet_done \
+sim:/UART_TX_tb/send_data
+run -all
+# ** Note: $finish    : C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX_tb.sv(28)
+#    Time: 104240 ns  Iteration: 0  Instance: /UART_TX_tb
+# 1
+# Break in Module UART_TX_tb at C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_TX/UART_TX_tb.sv line 28
+# End time: 20:13:46 on Jul 20,2022, Elapsed time: 0:02:29
+# Errors: 0, Warnings: 0

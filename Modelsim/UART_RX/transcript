@@ -1,0 +1,32 @@
+# Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# OpenFile {C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX_TB.mpf}
+# Loading project UART_RX_TB
+# Compile of UART_RX_tb.sv was successful.
+# Compile of UART_Counter.sv was successful.
+# Compile of UART_RX.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.UART_RX_tb
+# vsim -gui work.UART_RX_tb 
+# Start time: 20:48:05 on Jul 21,2022
+# Loading sv_std.std
+# Loading work.UART_RX_tb
+# Loading work.UART_RX
+# Loading work.UART_Counter
+add wave -position insertpoint  \
+sim:/UART_RX_tb/clk \
+sim:/UART_RX_tb/rstn \
+sim:/UART_RX_tb/serial_dat_in \
+sim:/UART_RX_tb/get_bit \
+sim:/UART_RX_tb/packet_done \
+sim:/UART_RX_tb/data
+run -all
+# Data send is: 61
+# At 95560 ns
+# Data received is: 61
+# << Correct Data Received >>
+# ** Note: $finish    : C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX_tb.sv(47)
+#    Time: 97560 ns  Iteration: 0  Instance: /UART_RX_tb
+# 1
+# Break in Module UART_RX_tb at C:/Users/Minh/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Modelsim_Projects/UART_RX/UART_RX_tb.sv line 47
+# End time: 22:56:11 on Jul 21,2022, Elapsed time: 2:08:06
+# Errors: 0, Warnings: 0

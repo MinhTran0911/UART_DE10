@@ -1,0 +1,182 @@
+|UART_Top
+clk => clk.IN3
+rstn => rstn.IN3
+serial_in => serial_in.IN1
+send => send.IN1
+data_send[0] => data_send[0].IN1
+data_send[1] => data_send[1].IN1
+data_send[2] => data_send[2].IN1
+data_send[3] => data_send[3].IN1
+data_send[4] => data_send[4].IN1
+data_send[5] => data_send[5].IN1
+data_send[6] => data_send[6].IN1
+data_send[7] => data_send[7].IN1
+serial_out << UART_TX:UART_Transmitter.serial_dat_out
+HEX[1][0] << HEX_Disp:HEX_Disp_1.segments
+HEX[1][1] << HEX_Disp:HEX_Disp_1.segments
+HEX[1][2] << HEX_Disp:HEX_Disp_1.segments
+HEX[1][3] << HEX_Disp:HEX_Disp_1.segments
+HEX[1][4] << HEX_Disp:HEX_Disp_1.segments
+HEX[1][5] << HEX_Disp:HEX_Disp_1.segments
+HEX[1][6] << HEX_Disp:HEX_Disp_1.segments
+HEX[0][0] << HEX_Disp:HEX_Disp_2.segments
+HEX[0][1] << HEX_Disp:HEX_Disp_2.segments
+HEX[0][2] << HEX_Disp:HEX_Disp_2.segments
+HEX[0][3] << HEX_Disp:HEX_Disp_2.segments
+HEX[0][4] << HEX_Disp:HEX_Disp_2.segments
+HEX[0][5] << HEX_Disp:HEX_Disp_2.segments
+HEX[0][6] << HEX_Disp:HEX_Disp_2.segments
+
+
+|UART_Top|Edge_Detector:Send_Negedge_Detector
+clk => prev_sig.CLK
+rstn => ~NO_FANOUT~
+sig => pe.IN1
+sig => prev_sig.DATAIN
+sig => ne.IN1
+pe <= pe.DB_MAX_OUTPUT_PORT_TYPE
+ne <= ne.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_Top|UART_RX:UART_Receiver
+clk => clk.IN1
+rstn => rstn.IN1
+serial_dat_in => shift_reg.DATAB
+serial_dat_in => Selector0.IN2
+serial_dat_in => Selector1.IN1
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_Top|UART_RX:UART_Receiver|UART_Counter:Counter
+clk => bit_count[0].CLK
+clk => bit_count[1].CLK
+clk => bit_count[2].CLK
+clk => bit_count[3].CLK
+clk => baud_count[0].CLK
+clk => baud_count[1].CLK
+clk => baud_count[2].CLK
+clk => baud_count[3].CLK
+clk => baud_count[4].CLK
+clk => baud_count[5].CLK
+clk => baud_count[6].CLK
+clk => baud_count[7].CLK
+clk => baud_count[8].CLK
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+half_bit_flag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+full_bit_flag <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+packet_done <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_Top|UART_TX:UART_Transmitter
+clk => clk.IN1
+rstn => rstn.IN1
+send => always2.IN1
+send => next_state.DATAA
+send_data[0] => shift_reg.DATAB
+send_data[1] => shift_reg.DATAB
+send_data[2] => shift_reg.DATAB
+send_data[3] => shift_reg.DATAB
+send_data[4] => shift_reg.DATAB
+send_data[5] => shift_reg.DATAB
+send_data[6] => shift_reg.DATAB
+send_data[7] => shift_reg.DATAB
+serial_dat_out <= serial_dat_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_Top|UART_TX:UART_Transmitter|UART_Counter:Counter
+clk => bit_count[0].CLK
+clk => bit_count[1].CLK
+clk => bit_count[2].CLK
+clk => bit_count[3].CLK
+clk => baud_count[0].CLK
+clk => baud_count[1].CLK
+clk => baud_count[2].CLK
+clk => baud_count[3].CLK
+clk => baud_count[4].CLK
+clk => baud_count[5].CLK
+clk => baud_count[6].CLK
+clk => baud_count[7].CLK
+clk => baud_count[8].CLK
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => baud_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+rstn => bit_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+cnt_reset => baud_count.OUTPUTSELECT
+half_bit_flag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+full_bit_flag <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+packet_done <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_Top|HEX_Disp:HEX_Disp_1
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|UART_Top|HEX_Disp:HEX_Disp_2
+hex_digit[0] => Decoder0.IN3
+hex_digit[1] => Decoder0.IN2
+hex_digit[2] => Decoder0.IN1
+hex_digit[3] => Decoder0.IN0
+segments[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

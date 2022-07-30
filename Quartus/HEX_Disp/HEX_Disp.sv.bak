@@ -1,0 +1,12 @@
+module HEX_Disp (hex_digit, segments);
+	
+	input logic [3:0] hex_digit;
+	output logic [6:0] segments;
+	
+	typedef enum {	ZERO = 7'b100_0000, ONE = 7'b111_1001, TWO = 7'b010_0100, THREE = 7'b011_0000
+						FOUR = 7'b001_1001, FIVE = 7'b001_0010, SIX = 7'b000_0010, SEVEN = 7'b111_1000,
+						EIGHT = 7'b000_0000, NINE = 7'b001_0000, DASH = 7'b011_1111	} Patterns;
+	always_comb begin
+		case (hex_digit)
+			4'd0: patterns = 
+	end // end always_comb
