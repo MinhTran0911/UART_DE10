@@ -1,11 +1,10 @@
 module UART_Counter (clk, rstn, cnt_reset, half_bit_flag, full_bit_flag, packet_done);
 	
-	// 
-	localparam BAUD_COUNT_WIDTH = 9;
-	localparam FULL_BAUD_COUNT_TOP = 434;
-	localparam HALF_BAUD_COUNT_TOP = 217;
-	localparam BIT_COUNT_WIDTH = 4;
-	localparam BIT_COUNT_TOP = 10;
+	parameter BAUD_COUNT_WIDTH = 9;
+	parameter FULL_BAUD_COUNT_TOP = 434;
+	parameter HALF_BAUD_COUNT_TOP = 217;
+	parameter BIT_COUNT_WIDTH = 4;
+	parameter BIT_COUNT_TOP = 10;
 	
 	input logic clk, rstn, cnt_reset;
 	

@@ -1,5 +1,11 @@
 module UART_RX (clk, rstn, serial_dat_in, get_bit, packet_done, data);
 	
+	parameter BAUD_COUNT_WIDTH = 9;
+	parameter FULL_BAUD_COUNT_TOP = 434;
+	parameter HALF_BAUD_COUNT_TOP = 217;
+	parameter BIT_COUNT_WIDTH = 4;
+	parameter BIT_COUNT_TOP = 10;
+	
 	input logic clk, rstn, serial_dat_in;
 	
 	output logic [7:0] data;
@@ -24,6 +30,11 @@ module UART_RX (clk, rstn, serial_dat_in, get_bit, packet_done, data);
 									.packet_done(packet_done)
 									);
 	
+	defparam 	Counter.BAUD_COUNT_WIDTH = BAUD_COUNT_WIDTH;
+	defparam	Counter.FULL_BAUD_COUNT_TOP = FULL_BAUD_COUNT_TOP;
+	defparam	Counter.HALF_BAUD_COUNT_TOP = HALF_BAUD_COUNT_TOP;
+	defparam	Counter.BIT_COUNT_WIDTH = BIT_COUNT_WIDTH;
+	defparam	Counter.BIT_COUNT_TOP = BIT_COUNT_TOP;
 	
 	always_ff @(posedge clk) begin
 		if (!rstn) state <= IDLE;

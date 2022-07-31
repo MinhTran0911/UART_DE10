@@ -1,6 +1,6 @@
 Assembler report for UART_RX
-Wed Jul 20 10:56:53 2022
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Sun Jul 31 08:22:43 2022
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/output_files/UART_RX.sof
+  5. Assembler Device Options: C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/output_files/UART_RX.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jul 20 10:56:53 2022 ;
+; Assembler Status      ; Successful - Sun Jul 31 08:22:43 2022 ;
 ; Revision Name         ; UART_RX                               ;
 ; Top-level Entity Name ; UART_RX                               ;
 ; Family                ; Cyclone V                             ;
@@ -52,23 +52,23 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                                             ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                                             ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/output_files/UART_RX.sof ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                 ;
++-----------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                 ;
++-----------------------------------------------------------------------------------------------------------+
+; C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/output_files/UART_RX.sof ;
++-----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/output_files/UART_RX.sof ;
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                                        ;
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00ECB5FC                                                                                                                                                     ;
-; Checksum       ; 0x00ECB5FC                                                                                                                                                     ;
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/output_files/UART_RX.sof ;
++----------------+--------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                            ;
++----------------+--------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00ECBE06                                                                                                         ;
+; Checksum       ; 0x00ECBE06                                                                                                         ;
++----------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -76,15 +76,15 @@ refer to the applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jul 20 10:56:35 2022
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Sun Jul 31 08:22:36 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off UART_RX -c UART_RX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Wed Jul 20 10:56:53 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Sun Jul 31 08:22:43 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 

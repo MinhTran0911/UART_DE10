@@ -1,5 +1,11 @@
 module UART_TX (clk, rstn, send, send_data, serial_dat_out);
 	
+	parameter BAUD_COUNT_WIDTH = 9;
+	parameter FULL_BAUD_COUNT_TOP = 434;
+	parameter HALF_BAUD_COUNT_TOP = 217;
+	parameter BIT_COUNT_WIDTH = 4;
+	parameter BIT_COUNT_TOP = 10;
+	
 	input logic clk, rstn, send;
 	input logic [7:0] send_data;
 	
@@ -23,6 +29,12 @@ module UART_TX (clk, rstn, send, send_data, serial_dat_out);
 							.full_bit_flag(send_bit), 
 							.packet_done(packet_done)
 							);
+	
+	defparam BAUD_COUNT_WIDTH = BAUD_COUNT_WIDTH;
+	defparam FULL_BAUD_COUNT_TOP = BIT_COUNT_TOP;
+	defparam HALF_BAUD_COUNT_TOP = HALF_BAUD_COUNT_TOP;
+	defparam BIT_COUNT_WIDTH = BIT_COUNT_WIDTH;
+	defparam BIT_COUNT_TOP = BIT_COUNT_TOP;
 	
 	// FSM
 	always_ff @(posedge clk) begin

@@ -1,6 +1,6 @@
 Analysis & Synthesis report for UART_RX
-Wed Jul 20 10:55:50 2022
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Sun Jul 31 08:22:10 2022
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
 ---------------------
@@ -16,10 +16,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. State Machine - |UART_RX|state
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "UART_Counter:Counter"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |UART_RX
+ 12. Parameter Settings for User Entity Instance: UART_Counter:Counter
+ 13. Port Connectivity Checks: "UART_Counter:Counter"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -45,8 +47,8 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jul 20 10:55:50 2022       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Analysis & Synthesis Status     ; Successful - Sun Jul 31 08:22:10 2022       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; UART_RX                                     ;
 ; Top-level Entity Name           ; UART_RX                                     ;
 ; Family                          ; Cyclone V                                   ;
@@ -157,26 +159,26 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; UART_RX.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/UART_RX.sv      ;         ;
-; UART_Counter.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/UART_Counter.sv ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; UART_RX.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/UART_RX.sv      ;         ;
+; UART_Counter.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/UART_Counter.sv ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -211,8 +213,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+--------------+--------------+
-; |UART_RX                   ; 24 (5)              ; 33 (20)                   ; 0                 ; 0          ; 11   ; 0            ; |UART_RX                      ; UART_RX      ; work         ;
-;    |UART_Counter:Counter|  ; 19 (19)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |UART_RX|UART_Counter:Counter ; UART_Counter ; work         ;
+; |UART_RX                   ; 24 (6)              ; 33 (20)                   ; 0                 ; 0          ; 11   ; 0            ; |UART_RX                      ; UART_RX      ; work         ;
+;    |UART_Counter:Counter|  ; 18 (18)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |UART_RX|UART_Counter:Counter ; UART_Counter ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -254,6 +256,34 @@ Encoding Type:  One-Hot
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |UART_RX|UART_Counter:Counter|bit_count[2]  ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |UART_RX|UART_Counter:Counter|baud_count[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |UART_RX ;
++---------------------+-------+-------------------------------------------+
+; Parameter Name      ; Value ; Type                                      ;
++---------------------+-------+-------------------------------------------+
+; BAUD_COUNT_WIDTH    ; 9     ; Signed Integer                            ;
+; FULL_BAUD_COUNT_TOP ; 434   ; Signed Integer                            ;
+; HALF_BAUD_COUNT_TOP ; 217   ; Signed Integer                            ;
+; BIT_COUNT_WIDTH     ; 4     ; Signed Integer                            ;
+; BIT_COUNT_TOP       ; 10    ; Signed Integer                            ;
++---------------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART_Counter:Counter ;
++---------------------+-------+-------------------------------------+
+; Parameter Name      ; Value ; Type                                ;
++---------------------+-------+-------------------------------------+
+; BAUD_COUNT_WIDTH    ; 9     ; Signed Integer                      ;
+; FULL_BAUD_COUNT_TOP ; 434   ; Signed Integer                      ;
+; HALF_BAUD_COUNT_TOP ; 217   ; Signed Integer                      ;
+; BIT_COUNT_WIDTH     ; 4     ; Signed Integer                      ;
+; BIT_COUNT_TOP       ; 10    ; Signed Integer                      ;
++---------------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------+
@@ -304,17 +334,17 @@ Encoding Type:  One-Hot
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jul 20 10:55:38 2022
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Sun Jul 31 08:22:03 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART_RX -c UART_RX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file uart_rx.sv
-    Info (12023): Found entity 1: UART_RX File: C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/UART_RX.sv Line: 1
+    Info (12023): Found entity 1: UART_RX File: C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/UART_RX.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file uart_counter.sv
-    Info (12023): Found entity 1: UART_Counter File: C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/UART_Counter.sv Line: 1
+    Info (12023): Found entity 1: UART_Counter File: C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/UART_Counter.sv Line: 1
 Info (12127): Elaborating entity "UART_RX" for the top level hierarchy
-Info (12128): Elaborating entity "UART_Counter" for hierarchy "UART_Counter:Counter" File: C:/Users/trank/OneDrive - RMIT University/[EEET2476]Advanced_Digital_Design_2_2022B/Quartus_Projects/Tutorial_4_UART/UART_RX/UART_RX.sv Line: 24
+Info (12128): Elaborating entity "UART_Counter" for hierarchy "UART_Counter:Counter" File: C:/Users/Minh/OneDrive - RMIT University/Portfolio/HDL/UART_DE10/Quartus/UART_RX/UART_RX.sv Line: 30
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -323,9 +353,9 @@ Info (21057): Implemented 52 device resources after synthesis - the final resour
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 41 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Wed Jul 20 10:55:50 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4865 megabytes
+    Info: Processing ended: Sun Jul 31 08:22:10 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:16
 
 
